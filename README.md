@@ -1,5 +1,12 @@
 ## Readme
-mvn package
+
+Usage: 
+
+1. git clone https://github.com/lyubent/cass-threading
+2. mvn package
+3. Set env-vars in benchmark.sh
+4. ./benchmark.sh
+
 
 Assumptions:
 
