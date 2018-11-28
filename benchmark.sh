@@ -2,7 +2,7 @@
 # Set java home
 # JAVA_HOME=/...
 # set the home-dir of the benchmark. aka where src is located.
-BENCHMARK_HOME="/Users/lyubent/Desktop/Dev/c3014client"
+BENCHMARK_HOME=""
 # the local maven repository. typically ~/.m2 on unix machines
 LOCAL_M2_REPO="$HOME/.m2"
 
