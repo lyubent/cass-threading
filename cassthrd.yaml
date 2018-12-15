@@ -1,0 +1,3 @@
+# Level of parallelism. How many sessions / threads
+# to generate for the benchmark.
+parallelism: 480

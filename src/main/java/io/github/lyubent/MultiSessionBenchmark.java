@@ -4,6 +4,8 @@ import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.PreparedStatement;
 import com.datastax.driver.core.Session;
 import io.github.lyubent.client.ClientBuilder;
+import io.github.lyubent.config.CassthreadingConfig;
+import io.github.lyubent.config.YAMLConfigParser;
 import io.github.lyubent.exception.ConfigException;
 import io.github.lyubent.exception.CommonMsgs;
 import io.github.lyubent.query.Query;
@@ -16,11 +18,11 @@ import java.util.concurrent.Executors;
 
 public class MultiSessionBenchmark {
 
-    private static final int CLIENT_COUNT = 480;
+    private final CassthreadingConfig conf = CassthreadingConfig.getInstance();
+    private final int CLIENT_COUNT = conf.getParallelism();
 
     // 480 for shared obj.
     public static void main(String[] args)  {
-
         if (args.length < 2)
             throw new ConfigException(CommonMsgs.tooFewArgs());
 
