@@ -14,7 +14,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class SpamSession {
+public class MultiSessionBenchmark {
 
     private static final int CLIENT_COUNT = 480;
 
@@ -30,7 +30,7 @@ public class SpamSession {
         }
 
         ClientBuilder cb = new ClientBuilder(contactPoints);
-        SpamSession s = new SpamSession();
+        MultiSessionBenchmark s = new MultiSessionBenchmark();
 
         // todo - needs better error handling
         // todo - this 'func' doesn't belong in main.

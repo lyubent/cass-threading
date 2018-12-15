@@ -57,4 +57,4 @@ CLS_PATH=$CLS_PATH:"$LOCAL_M2_REPO/repository/com/github/jnr/jnr-x86asm/1.0.2/jn
 CLS_PATH=$CLS_PATH:"$LOCAL_M2_REPO/repository/com/github/jnr/jnr-posix/3.0.44/jnr-posix-3.0.44.jar"
 CLS_PATH=$CLS_PATH:"$LOCAL_M2_REPO/repository/com/github/jnr/jnr-constants/0.9.9/jnr-constants-0.9.9.jar"
 
-time $JAVA_HOME/bin/java -classpath $CLS_PATH io.github.lyubent.SpamSession "$@"
+time $JAVA_HOME/bin/java -classpath $CLS_PATH io.github.lyubent.MultiSessionBenchmark "$@"
