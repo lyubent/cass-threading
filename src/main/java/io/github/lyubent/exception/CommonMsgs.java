@@ -1,6 +1,6 @@
 package io.github.lyubent.exception;
 
-public class ExceptionMsgs {
+public class CommonMsgs {
 
     public static String tooFewArgs() {
         return "Too few arguments. Expected 'session' or 'thread' without quotation marks, " +

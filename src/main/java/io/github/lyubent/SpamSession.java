@@ -4,11 +4,11 @@ import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.PreparedStatement;
 import com.datastax.driver.core.Session;
 import io.github.lyubent.client.ClientBuilder;
-import io.github.lyubent.exception.ExceptionMsgs;
+import io.github.lyubent.exception.ConfigException;
+import io.github.lyubent.exception.CommonMsgs;
 import io.github.lyubent.query.Query;
 import io.github.lyubent.thread.SharedSessionBased;
 import io.github.lyubent.thread.SessionPerThreadBased;
-import org.slf4j.Logger;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -22,7 +22,7 @@ public class SpamSession {
     public static void main(String[] args)  {
 
         if (args.length < 2)
-            throw new IllegalArgumentException(ExceptionMsgs.tooFewArgs());
+            throw new ConfigException(CommonMsgs.tooFewArgs());
 
         String[] contactPoints = new String[args.length-1];
         for (int i=1; i<args.length; i++) {
@@ -40,7 +40,7 @@ public class SpamSession {
         } else if (arg1.trim().toLowerCase().equals("session")) {
             s.multiSession(contactPoints);
         } else {
-            throw new IllegalArgumentException(ExceptionMsgs.invalidArg1(arg1));
+            throw new ConfigException(CommonMsgs.invalidArg1(arg1));
         }
     }
 
