@@ -3,5 +3,7 @@
 .LSOverride
 
 # IntelliJ
+*.iml
 out/
+target/
 .idea/
