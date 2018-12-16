@@ -9,13 +9,13 @@ import io.github.lyubent.query.Query;
 
 import java.util.concurrent.CountDownLatch;
 
-public class SessionPerThreadBased implements Runnable {
+public class MultiSessionRunnable implements Runnable {
 
     Integer threadId;
     Session ses;
     CountDownLatch latch;
 
-    public SessionPerThreadBased(Integer threadId, CountDownLatch latch, String[] contactPoints) {
+    public MultiSessionRunnable(Integer threadId, CountDownLatch latch, String[] contactPoints) {
 
         this.threadId = threadId;
         this.latch = latch;
