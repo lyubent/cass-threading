@@ -1,3 +1,7 @@
 # Level of parallelism. How many sessions / threads
 # to generate for the benchmark.
 parallelism: 480
+nodes:
+    - 127.0.0.1
+    - 127.0.0.2
+benchmark: thread
