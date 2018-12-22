@@ -1,6 +1,7 @@
 package io.github.lyubent.config;
 
 import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 public class CassthreadingConfigTest {

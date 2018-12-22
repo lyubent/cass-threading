@@ -2,8 +2,8 @@ package io.github.lyubent.query;
 
 public class Query {
 
-    private static final String LOCAL_DC = "dc1";
-    private static final String REMOTE_DC = "dc2";
+    private static final String LOCAL_DC = "datacenter1";
+    private static final String REMOTE_DC = "datacenter2";
     private static final String RF = "1";
 
     public static String getLocalDC() {
@@ -22,6 +22,14 @@ public class Query {
     public static String getKeyspaceDefSession() {
         return "CREATE KEYSPACE IF NOT EXISTS multisession WITH REPLICATION = " +
                 "{ 'class' : 'NetworkTopologyStrategy', '" + LOCAL_DC + "' : " + RF + ", '" + REMOTE_DC + "' : " + RF + " };";
+    }
+
+    public static String getKeyspaceDropThread() {
+        return "DROP KEYSPACE IF EXISTS multithread;";
+    }
+
+    public static String getKeyspaceDropSession() {
+        return "DROP KEYSPACE IF EXISTS multisession;";
     }
 
     public static String getTblDefThread() {

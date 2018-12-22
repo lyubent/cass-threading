@@ -47,5 +47,11 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.nosan</groupId>
+            <artifactId>embedded-cassandra-junit</artifactId>
+            <version>0.0.13</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>
