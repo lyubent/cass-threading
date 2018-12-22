@@ -3,8 +3,8 @@ package io.github.lyubent;
 import io.github.lyubent.config.CassthreadingConfig;
 import io.github.lyubent.exception.ConfigException;
 import io.github.lyubent.exception.CommonMsgs;
-import io.github.lyubent.thread.MultiSession;
-import io.github.lyubent.thread.MultiThread;
+import io.github.lyubent.benchmark.MultiSession;
+import io.github.lyubent.benchmark.MultiThread;
 
 public class MultiSessionBenchmark {
 

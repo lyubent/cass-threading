@@ -1,4 +1,4 @@
-package io.github.lyubent.thread;
+package io.github.lyubent.benchmark;
 
 import com.datastax.driver.core.PreparedStatement;
 import com.datastax.driver.core.Session;

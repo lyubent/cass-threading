@@ -1,4 +1,4 @@
-package io.github.lyubent.thread;
+package io.github.lyubent.benchmark;
 
 public interface Benchmark {
 
