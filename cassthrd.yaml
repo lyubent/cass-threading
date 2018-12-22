@@ -4,4 +4,5 @@ parallelism: 480
 nodes:
     - 127.0.0.1
     - 127.0.0.2
+port: 9042
 benchmark: thread

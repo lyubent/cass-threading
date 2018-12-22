@@ -16,6 +16,16 @@ public class CassthreadingConfig {
 
     private Integer parallelism;
     private String[] nodes;
+    private int port;
+    private String benchmark;
+
+    public int getPort() {
+        return port;
+    }
+
+    public void setPort(int port) {
+        this.port = port;
+    }
 
     public String getBenchmark() {
         return benchmark;
@@ -32,8 +42,6 @@ public class CassthreadingConfig {
     public void setNodes(String[] nodes) {
         this.nodes = nodes;
     }
-
-    private String benchmark;
 
     public Integer getParallelism() {
         return parallelism;

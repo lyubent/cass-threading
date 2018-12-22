@@ -15,7 +15,7 @@ public class MultiSessionRunnable implements Runnable {
     Session ses;
     CountDownLatch latch;
 
-    public MultiSessionRunnable(Integer threadId, CountDownLatch latch, String[] contactPoints) {
+    public MultiSessionRunnable(Integer threadId, CountDownLatch latch, String[] contactPoints, int port) {
 
         this.threadId = threadId;
         this.latch = latch;
@@ -26,7 +26,7 @@ public class MultiSessionRunnable implements Runnable {
                 .build();
         Cluster cluster = Cluster.builder().withLoadBalancingPolicy(new TokenAwarePolicy(dcAwareRoundRobinPolicy))
                 .addContactPoints(contactPoints)
-                .withPort(9042)
+                .withPort(port)
                 .build();
         ses = cluster.connect();
         ses.execute(Query.getKeyspaceDefSession());

@@ -13,14 +13,16 @@ import java.util.concurrent.Executors;
 public class MultiThread implements Benchmark {
 
     private String[] contactPoints;
+    private int port;
     private int clientCount;
 
     /**
      * @param contactPoints - Nodes to connect to for benchmarking
      * @param clientCount - Number of runnables to execute in parallel
      */
-    public MultiThread(String[] contactPoints, int clientCount) {
+    public MultiThread(String[] contactPoints, int port, int clientCount) {
         this.contactPoints = contactPoints;
+        this.port = port;
         this.clientCount = clientCount;
     }
 
@@ -29,7 +31,7 @@ public class MultiThread implements Benchmark {
      */
     public  void runBenchmark() {
 
-        ClientBuilder cb = new ClientBuilder(contactPoints);
+        ClientBuilder cb = new ClientBuilder(contactPoints, port);
 
         // single shared client.
         Cluster cluster = cb.getCluster();

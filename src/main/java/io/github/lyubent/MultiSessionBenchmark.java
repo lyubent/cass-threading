@@ -15,10 +15,10 @@ public class MultiSessionBenchmark {
 
         switch (conf.getBenchmark().trim()) {
             case "thread":
-                new MultiThread(conf.getNodes(), conf.getParallelism()).runBenchmark();
+                new MultiThread(conf.getNodes(), conf.getParallelism(), conf.getPort()).runBenchmark();
                 break;
             case "session":
-                new MultiSession(conf.getNodes(), conf.getParallelism()).runBenchmark();
+                new MultiSession(conf.getNodes(), conf.getParallelism(), conf.getPort()).runBenchmark();
                 break;
             default:
                 throw new ConfigException(CommonMsgs.missconfiguredYaml("benchmark", "'thread' or 'session'"));

@@ -7,14 +7,16 @@ import java.util.concurrent.Executors;
 public class MultiSession implements Benchmark {
 
     private String[] contactPoints;
+    private int port;
     private int clientCount;
 
     /**
      * @param contactPoints - Nodes to connect to for benchmarking
      * @param clientCount - Number of sessions to use for parallel execution
      */
-    public MultiSession(String[] contactPoints, int clientCount) {
+    public MultiSession(String[] contactPoints, int port, int clientCount) {
         this.contactPoints = contactPoints;
+        this.port = port;
         this.clientCount = clientCount;
     }
 
@@ -26,7 +28,7 @@ public class MultiSession implements Benchmark {
         ExecutorService executor = Executors.newFixedThreadPool(clientCount);
         try {
             for (int i = 1; i < clientCount +1; i++)
-                executor.execute(new MultiSessionRunnable(i*10000, latch, contactPoints));
+                executor.execute(new MultiSessionRunnable(i*10000, latch, contactPoints, port));
             latch.await();
         }catch(Exception err){
             err.printStackTrace();

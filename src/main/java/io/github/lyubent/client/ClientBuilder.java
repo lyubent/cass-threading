@@ -8,9 +8,11 @@ import io.github.lyubent.query.Query;
 public class ClientBuilder {
 
     private String[] contactPoints;
+    private int port;
 
-    public ClientBuilder(String[] contactPoints) {
+    public ClientBuilder(String[] contactPoints, int port) {
         this.contactPoints = contactPoints;
+        this.port = port;
     }
 
     public Cluster getCluster() {
@@ -20,7 +22,7 @@ public class ClientBuilder {
                 .build();
         Cluster cluster = Cluster.builder().withLoadBalancingPolicy(new TokenAwarePolicy(dcAwareRoundRobinPolicy))
                 .addContactPoints(contactPoints)
-                .withPort(9042)
+                .withPort(port)
                 .build();
 
         return cluster;
