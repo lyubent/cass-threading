@@ -3,9 +3,11 @@ package io.github.lyubent.config;
 import io.github.lyubent.exception.ConfigException;
 import org.yaml.snakeyaml.Yaml;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.nio.file.Paths;
 
 public class YAMLConfigParser {
@@ -17,7 +19,7 @@ public class YAMLConfigParser {
      */
     static CassthreadingConfig parseCfg() {
         // todo Test this extensively. Relying on paths to the cfg can cause issues.
-        String cfgPath = Paths.get("").toAbsolutePath() + "/cassthrd.yaml";
+        String cfgPath = "src/main/resources/cassthrd.yaml";
         try (InputStream inputStream = new FileInputStream(cfgPath)){
             Yaml yaml = new Yaml();
             return yaml.loadAs(inputStream, CassthreadingConfig.class);
