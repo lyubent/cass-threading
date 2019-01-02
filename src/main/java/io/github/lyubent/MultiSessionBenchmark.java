@@ -15,21 +15,21 @@ public class MultiSessionBenchmark {
         // todo - currently for testing.
         WebApp web = new WebApp();
 
-//        final CassthreadingConfig conf = CassthreadingConfig.getInstance();
-//        Timer t = new Timer();
-//
-//        switch (conf.getBenchmark().trim()) {
-//            case "thread":
-//                new MultiThread(conf.getNodes(), conf.getParallelism(), conf.getPort()).runBenchmark();
-//                break;
-//            case "session":
-//                new MultiSession(conf.getNodes(), conf.getParallelism(), conf.getPort()).runBenchmark();
-//                break;
-//            default:
-//                throw new ConfigException(CommonMsgs.missconfiguredYaml("benchmark", "'thread' or 'session'"));
-//        }
-//
-//        // display benchmark duration from the JVM POV.
-//        t.displayDuration();
+        final CassthreadingConfig conf = CassthreadingConfig.getInstance();
+        Timer t = new Timer();
+
+        switch (conf.getBenchmark().trim()) {
+            case "thread":
+                new MultiThread(conf.getNodes(), conf.getParallelism(), conf.getPort()).runBenchmark();
+                break;
+            case "session":
+                new MultiSession(conf.getNodes(), conf.getParallelism(), conf.getPort()).runBenchmark();
+                break;
+            default:
+                throw new ConfigException(CommonMsgs.missconfiguredYaml("benchmark", "'thread' or 'session'"));
+        }
+
+        // display benchmark duration from the JVM POV.
+        t.displayDuration();
     }
 }
