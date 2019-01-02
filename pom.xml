@@ -79,5 +79,10 @@
             <artifactId>onejar-maven-plugin</artifactId>
             <version>1.4.4</version>
         </dependency>
+        <dependency>
+            <groupId>org.nanohttpd</groupId>
+            <artifactId>nanohttpd</artifactId>
+            <version>2.2.0</version>
+        </dependency>
     </dependencies>
 </project>
