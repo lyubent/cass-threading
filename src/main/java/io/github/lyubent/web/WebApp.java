@@ -1,12 +1,15 @@
 package io.github.lyubent.web;
 
 import fi.iki.elonen.NanoHTTPD;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.Map;
 
 public class WebApp extends NanoHTTPD {
 
+    private final static Logger logger = LoggerFactory.getLogger(WebApp.class);
     // todo - webport should be configurable.
     private static final int WEB_PORT = 8080;
 
@@ -15,9 +18,9 @@ public class WebApp extends NanoHTTPD {
         try {
             start(NanoHTTPD.SOCKET_READ_TIMEOUT, false);
         } catch (IOException iox) {
-            System.out.println("Failed to launch Web-app:\n" + iox);
+            logger.error("Failed to launch Web-app:\n" + iox);
         }
-        System.out.println("\nWeb-app Running! Point your browsers to http://localhost:8080/ \n");
+        logger.info("Web-app Running! Point your browsers to http://localhost:8080/");
     }
 
     @Override
